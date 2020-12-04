@@ -1,0 +1,36 @@
+<div class="form">
+  <form action="" method="post" (ngSubmit)="doRegister()" [formGroup]="registerGroup" id="form">
+    <h1> Registro </h1>
+    <div class="group-input">
+      <input type="text" name="nombre" pattern="[A-Za-z0-9_-]{1,200}" formControlName="nombre" id="nombre" required>
+      <span class="bar"></span>
+      <label for="nombre">Nombre</label>
+    </div>
+    <div class="group-input">
+      <input type="text" name="usuario" pattern="[A-Za-z0-9_-]{1,200}" formControlName="usuario" id="usuario" required>
+      <span class="bar"></span>
+      <label for="usuario">Usuario</label>
+    </div>
+    <div class="group-input">
+      <input type="password" name="contraseña" pattern="[A-Za-z0-9_-]{1,200}" formControlName="contraseña" id="contraseña" required>
+      <span class="bar"></span>
+      <label for="contraseña">Contraseña</label>
+    </div>
+    <div class="group-input">
+      <input type="password" name="repetirContraseña" pattern="[A-Za-z0-9_-]{1,200}" formControlName="repetirContraseña" id="repetirContraseña"
+        required>
+      <span class="bar"></span>
+      <label for="repetirContraseña">Repetir contraseña</label>
+    </div>
+    <div class="radio">
+        <input type="radio" name="rol" id="student">
+        <label for="student">Estudiante</label>
+        <br>
+        <br>
+        <input type="radio" name="rol" id="profesor">
+        <label for="profesor">Profesor</label>
+    </div>
+    <br>
+    <button type="submit">Crear cuenta</button>
+  </form>
+</div>

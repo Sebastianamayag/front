@@ -1,0 +1,38 @@
+<header rol="banner">
+    <div class="main">
+        <nav class="navbar">
+            <div class="brand">
+                <i class="far fa-comments"></i>
+                    <h3>
+                       Chat clase .....
+                    </h3>
+            </div>
+            <div class="menu">
+                <ul id="menu">
+                    <li><a [routerLink]="['']">Inicio</a></li>
+                    <li><a [routerLink]="['', 'usuario', 'login']">Ingresar</a></li>
+                    <li><a [routerLink]="['', 'usuario', 'registro']">Registrarse</a></li>
+                </ul>
+            </div>
+            <div class="toggle-menu" id="toggle-icon">
+                <i class="fa fa-bars" (click)="show()"></i>
+            </div>
+        </nav>
+        <div class="container-info">
+            <div class="img-content">
+                <img src="assets/streaming.jpg" alt="aula virtual">
+            </div>
+            <div class="main-info">
+                <h1>Clases virtuales</h1>
+                <h2>Puedes chatear con el monitor</h2>
+                <br>
+                <button class="btn" [routerLink]="['', 'usuario', 'login']"> Ingresar </button>
+            </div>
+            <div class="social-content">
+                <ul>
+                    <li><i class="fab fa-github"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

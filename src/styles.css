@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Permanent+Marker&display=swap');
+
+:root{
+    --textInputColor: #c6c6c6;
+    --secondaryColor: #f16623;
+    --primaryColor: #57585a;
+}
+
+body {
+  font-family: "Monserrat", sans-serif;
+  background-color: var(--primaryColor);
+}
+header {
+  width: 100%;
+}
+
+.header .main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  margin-top: 30px;
+}
+
+.navbar .brand {
+  display: flex;
+  margin: 20px 70px;
+  color:var(--secondaryColor);
+}
+
+.navbar .brand i {
+  font-size: 1.6em;
+}
+
+.navbar .brand h3 {
+  font-size: 1.3em;
+  margin: 5px 5px;
+}
+
+.show{
+  display: block;
+}
+
+
+
+.bg-gradient-login{
+  background: #FFA17F;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00223E, #FFA17F);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00223E, #FFA17F);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-gradient-regiter{
+  background: #FFA17F;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00223E, #FFA17F);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00223E, #FFA17F);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.virtual-class{
+  height: 800px;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}

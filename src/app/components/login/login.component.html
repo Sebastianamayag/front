@@ -1,0 +1,16 @@
+<div class="form">
+  <form action="" method="post" (ngSubmit)="doLogin()" [formGroup]="loginGroup" id="form">
+    <h1> Ingresar </h1>
+    <div class="group-input">
+      <input type="text" name="usuario" pattern="[A-Za-z0-9_-]{1,200}" formControlName="usuario" id="usuario" required>
+      <span class="bar"></span>
+      <label for="usuario">Usuario</label>
+    </div>
+    <div class="group-input">
+      <input type="password" pattern="[A-Za-z0-9_-]{1,200}" name="contraseña" formControlName="contraseña" id="contraseña" required>
+      <span class="bar"></span>
+      <label for="name" >Contraseña</label>
+    </div>
+    <button type="submit">Ingresar</button>
+  </form>
+</div>
