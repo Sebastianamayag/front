@@ -22,14 +22,19 @@
       <span class="bar"></span>
       <label for="repetirContraseña">Repetir contraseña</label>
     </div>
-    <div class="radio">
-        <input type="radio" name="rol" id="student">
-        <label for="student">Estudiante</label>
-        <br>
-        <br>
-        <input type="radio" name="rol" id="profesor">
-        <label for="profesor">Profesor</label>
-    </div>
+      <div *ngFor="let rol of rolValues" class="radio">
+        <input
+            formControlName="rol"
+            value="{{rol}}"
+            type="radio"
+            name="rol"
+            (change)="radioCambioRol(rol)"
+            id="{{rol}}"
+            >
+        <label for="{{rol}}">
+          {{rol === 'estudiante' ? 'Estudiante' : 'Profesor'}}
+        </label>
+      </div>
     <br>
     <button type="submit">Crear cuenta</button>
   </form>

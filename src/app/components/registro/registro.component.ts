@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 })
 export class RegistroComponent implements OnInit {
   public registerGroup: FormGroup;
+  rolValues = ['estudiante', 'profesor'];
   constructor(private builder: FormBuilder,
               private usuario: UserService,
               private router: Router,) {   }
@@ -22,6 +23,7 @@ export class RegistroComponent implements OnInit {
       usuario: [ { value: '', disabled: false }, [ Validators.required ] ],
       contraseña: [ { value: '', disabled: false }, [ Validators.required ] ],
       repetirContraseña: [ { value: '', disabled: false }, [ Validators.required ] ],
+      rol: [{ value: '', disabled: false }, [Validators.required]]
     });
   }
   doRegister():void{
@@ -34,6 +36,7 @@ export class RegistroComponent implements OnInit {
         confirmButtonText: 'Ok'
       })
       return;
+    //validar contraseñas iguales
     }else if(this.registerGroup.get('contraseña').value!=this.registerGroup.get('repetirContraseña').value){
       Swal.fire({
         title: 'Error',
@@ -42,6 +45,7 @@ export class RegistroComponent implements OnInit {
         confirmButtonText: 'Ok'
       })
       return;
+    //validar el tamaño de la contraseña
     }else if(this.registerGroup.get('contraseña').value.length <8){
       Swal.fire({
         title: 'Error',
@@ -55,7 +59,7 @@ export class RegistroComponent implements OnInit {
         nombre:this.registerGroup.get('nombre').value,
         usuario:this.registerGroup.get('usuario').value,
         contraseña:this.registerGroup.get('contraseña').value,
-        tipousuario:"estudiante"
+        tipousuario:this.registerGroup.get('rol').value
       }).subscribe(response=>{
         Swal.fire({
           title: 'Bienvenido',
@@ -75,6 +79,13 @@ export class RegistroComponent implements OnInit {
         } );
       })
     }
+    
   }
-
+  radioCambioRol(rol: string) {
+    this.rol.setValue(rol);
+    console.log(this.rol.value);
+  }
+  get rol() {
+    return this.registerGroup.get('rol');
+}
 }

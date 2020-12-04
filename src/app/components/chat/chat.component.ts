@@ -21,10 +21,11 @@ export class ChatComponent implements OnInit {
   constructor( private activated:ActivatedRoute,private webservice:WebSocketService,private router: Router,private usuario: UserService,) { }
 
   ngOnInit(): void {
+    document.body.classList.remove('bg-gradient-login');
+
     this.token=this.usuario.getUserLogged();
-    console.log(this.token);
     if(this.token==""){
-      this.router.navigate( [ ''] );
+      this.router.navigate( [''] );
     }else{
     const id=this.activated.snapshot.params.id;
     let amper = "&&";

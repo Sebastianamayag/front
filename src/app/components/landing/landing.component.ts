@@ -10,6 +10,8 @@ export class LandingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.body.classList.remove('bg-gradient-login');
+    document.body.classList.remove('bg-gradient-regiter');
   }
 
   show() {
